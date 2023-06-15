@@ -1,16 +1,15 @@
 require_relative 'my_enumerable'
 
 class MyList
-    include MyEnumerable
+  include MyEnumerable
 
-    attr_reader :list
+  attr_reader :list
 
-    def initialize(*elements)
-      @list = elements
-    end
+  def initialize(*elements)
+    @list = elements
+  end
 
-  def each
-    @list.each { |element| yield(element) }
+  def each(&block)
+    @list.each(&block)
   end
 end
-  
